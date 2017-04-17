@@ -2,4 +2,5 @@
 *.swo
 *~
 *.log
+.flowconfig
 node_modules

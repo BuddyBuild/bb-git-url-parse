@@ -1,0 +1,20 @@
+// @flow
+
+declare module.exports: (string) => {
+    protocols: Array<string>,
+    protocol: string,
+    port: null|number,
+    resource: string,
+    user: string,
+    pathname: string,
+    hash: string,
+    search: string,
+    href: string,
+    token: string,
+    toString: Function,
+    source: string,
+    name: string,
+    owner: string,
+    organization: string,
+    full_name: string
+};
