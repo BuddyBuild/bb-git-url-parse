@@ -121,4 +121,15 @@ tester.describe("parse urls", test => {
         res.token = "token";
         test.expect(res.toString()).toBe("https://x-token-auth:token@bitbucket.org/owner/name");
     });
+
+    test.should("parse https urls with 3 parts", () => {
+        var res = gitUrlParse("https://gitlab.com/owner/Group/my-repo.git");
+        test.expect(res.protocol).toBe("https");
+        test.expect(res.source).toBe("gitlab.com");
+        test.expect(res.resource).toBe("gitlab.com");
+        test.expect(res.user).toBe("");
+        test.expect(res.owner).toBe("owner");
+        test.expect(res.name).toBe("my-repo");
+        test.expect(res.full_name).toBe("owner/Group/my-repo");
+    });
 });
